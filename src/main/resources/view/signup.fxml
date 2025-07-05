@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.demo.googlesignup.controller.SignupController"
+            prefHeight="500.0" prefWidth="450.0"
+            style="-fx-background-color: #f4f4f4;">
+
+    <!-- Main Content Container -->
+    <VBox alignment="TOP_CENTER" spacing="20"
+          AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+        <padding><Insets bottom="20"/></padding>
+
+        <!-- Header -->
+        <Label text="User Signup" style="-fx-font-size: 24px; -fx-font-weight: bold;">
+            <padding><Insets bottom="10"/></padding>
+        </Label>
+
+        <!-- Google Sign-In Button -->
+        <Button fx:id="googleSignInButton" text="Sign up with Google"
+                style="-fx-background-color: #4285F4; -fx-text-fill: white; -fx-font-weight: bold;"
+                maxWidth="Infinity">
+            <padding><Insets top="10" bottom="10"/></padding>
+        </Button>
+
+        <!-- Separator -->
+        <Separator><padding><Insets top="10" bottom="10"/></padding></Separator>
+
+        <!-- Form Container -->
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="100"/>
+                <ColumnConstraints halignment="LEFT" minWidth="250"/>
+            </columnConstraints>
+
+            <!-- First Name -->
+            <Label text="First Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="firstNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <!-- Last Name -->
+            <Label text="Last Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="lastNameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <!-- Email -->
+            <Label text="Email:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="emailField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <!-- Password -->
+            <Label text="Password:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="passwordField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <!-- Confirm Password -->
+            <Label text="Confirm Password:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="confirmPasswordField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <!-- Button Container -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="signupButton" text="Sign Up" onAction="#handleSignup"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"
+                    prefWidth="120" prefHeight="30"/>
+            <Button fx:id="manualInsertButton" text="Manual Insert" onAction="#handleManualInsert"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white;"
+                    prefWidth="120" prefHeight="30"/>
+        </HBox>
+
+        <!-- Status Message -->
+        <Label fx:id="statusLabel" style="-fx-text-fill: red; -fx-font-weight: bold;"/>
+    </VBox>
+</AnchorPane>
